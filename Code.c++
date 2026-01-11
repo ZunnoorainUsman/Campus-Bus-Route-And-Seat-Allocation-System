@@ -1,3 +1,4 @@
+
 #include <iostream>
 using namespace std;
 
@@ -669,7 +670,7 @@ Print Row: Show all the details in one line.
 
             // check if the user will enter the duplicate ID
             for (int duplicateIDCounter = 0; duplicateIDCounter < 200; duplicateIDCounter++)
-            {             
+            {
                 if (duplicateIDCounter != AllocationIndex && AllocationID[duplicateIDCounter] == AllocationID[AllocationIndex])
                 {     //1st if condition will skip the same index means it will not compare with itself 
                       // 2nd will check other allocations like it will compare with other allocations
@@ -1033,13 +1034,13 @@ Print Row: Show all the details in one line.
             }
 
             // Add to new Bus.
-            BusSelectedSeats[OldBusIndex]++;
+            BusSelectedSeats[NewTempBusIndex]++;
 
             // Updating database
 
             RouteIDAllocation[FoundIndex] = TempRouteID;
             BusIDAllocation[FoundIndex] = TempBusID;
-            SeatNumber[FoundIndex] = TempFeeStatus;
+            SeatNumber[FoundIndex] = TempSeatNumber;
             FeeStatus[FoundIndex] = TempFeeStatus;
 
             cout << endl;
@@ -1062,7 +1063,7 @@ Print Row: Show all the details in one line.
 
             // Finding the Allocation Record Index 
             int FoundIndex = -1;
-            for (int allocationIDCancelCounter = 0; allocationIDCancelCounter < 6; allocationIDCancelCounter++)
+            for (int allocationIDCancelCounter = 0; allocationIDCancelCounter < 200; allocationIDCancelCounter++)
             {
                 if (AllocationID[allocationIDCancelCounter] == SearchAllocationID)
                 {
@@ -1074,6 +1075,7 @@ Print Row: Show all the details in one line.
             if (FoundIndex == -1)
             {
                 cout << "Error: Allocation ID not found!" << endl;
+                break;
             }
 
             // Now finding the bus index to decrease the booked seat count.
